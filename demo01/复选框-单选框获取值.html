@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Document</title>
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+<link rel="stylesheet" type="text/css" href="css/mui.css"/>
+</head>
+<body>
+<header class="mui-bar mui-bar-nav">
+    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+    <h1 class="mui-title">复选框-单选框获取值</h1>
+</header>
+<div class="mui-content">
+    <div class="mui-input-row mui-checkbox ">
+        <label>运动</label>
+        <input class="checkRds" name="运动" value="item1" type="checkbox" checked>
+    </div>
+    <div class="mui-input-row mui-checkbox ">
+        <label>学习</label>
+        <input class="checkRds" name="学习" value="item2" type="checkbox">
+    </div>
+    <div class="mui-input-row mui-checkbox ">
+        <label>啪啪</label>
+        <input class="checkRds" name="啪啪" value="item3" type="checkbox" disabled="disabled">
+    </div>
+    <button type="button" onclick="getCheckVal()">获取多选框值</button>
+    <div class="mui-input-row mui-radio ">
+        <label>Radio</label>
+        <input class="rds" name="radio" value="radio1"  type="radio">
+    </div>
+    <div class="mui-input-row mui-radio ">
+        <label>Radio</label>
+        <input class="rds"  name="radio" value="radio2" type="radio">
+    </div>
+    <div class="mui-input-row mui-radio mui-left">
+        <label>Radio</label>
+        <input class="rds"  name="radio" value="radio3" type="radio">
+    </div>
+    <button type="button" onclick="getRadioVal()">获取单选框值</button>
+    <ul class="mui-table-view mui-table-view-radio">
+		<li class="mui-table-view-cell">
+			<a class="mui-navigate-right">Item 1</a>
+		</li>
+		<li class="mui-table-view-cell mui-selected">
+			<a class="mui-navigate-right">Item 2</a>
+		</li>
+		<li class="mui-table-view-cell">
+			<a class="mui-navigate-right">Item 3</a>
+		</li>
+	</ul>
+</div>
+<script src="js/mui.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+mui.init();
+function getRadioVal() {
+	var res = getRadioRes('rds');
+	if(res == null) {
+		mui.toast('请选择');
+		return;
+	}
+	mui.toast(res);
+}
+function getCheckVal() {
+	var res = getCheckRes('checkRds');
+	if(res.length == 0) {
+		mui.toast('请选择');
+		return;
+	}
+	mui.toast(res);
+}
+//获取单选框的值
+function getRadioRes(className) {
+	var rdsObj = document.getElementsByClassName(className);
+	var checkVal = null;
+	for (var i = 0; i< rdsObj.length; i++) {
+		if(rdsObj[i].checked) {
+			checkVal = rdsObj[i].value;
+		}
+	}
+	return checkVal;	
+}
+//获取多选框的值
+function getCheckRes(className) {
+	var rdsObj = document.getElementsByClassName(className);
+	var rdsArr = new Array();
+	var k = 0;
+	for (var i = 0; i< rdsObj.length; i++) {
+		if(rdsObj[i].checked) {
+			rdsArr[k] = rdsObj[i].value;
+			k++;
+		}
+	}
+	return rdsArr;	
+}
+</script>
+</body>
+</html>
