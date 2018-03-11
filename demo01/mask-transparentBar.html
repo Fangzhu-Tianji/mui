@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Document</title>
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+<link rel="stylesheet" type="text/css" href="css/mui.css"/>
+</head>
+<body style="background: darkred;">
+<header class="mui-bar mui-bar-nav mui-bar-transparent">
+    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+    <h1 class="mui-title">mask</h1>
+</header>
+<div class="mui-content" style="background: transparent;">
+    <button type="button" class="mui-btn-blue" onclick="showMask()">打开mask</button>
+    <ul class="mui-table-view">
+        <li class="mui-table-view-cell">
+            <a class="mui-navigate-right">
+                Item 1
+            </a>
+        </li>
+        <li class="mui-table-view-cell">
+            <a class="mui-navigate-right">
+                 Item 2
+            </a>
+        </li>
+        <li class="mui-table-view-cell">
+            <a class="mui-navigate-right">
+                 Item 3
+            </a>
+        </li>
+    </ul>
+    <p>就将计就计</p>
+    <p>就将计就计</p>
+    <p>就将计就计</p>
+    <p>就将计就计</p>
+    <p>就将计就计</p>
+    <p>就将计就计</p>
+    <p>就将计就计</p>
+    <p>就将计就计</p>
+    <p>就将计就计</p>
+    <p>就将计就计</p>
+    <p>就将计就计</p>
+    <p>就将计就计</p>
+    <p>就将计就计</p>
+    <p>就将计就计</p>
+    <p>就将计就计</p>
+    <p>就将计就计</p>
+    <p>就将计就计</p>
+    <p>就将计就计</p>
+    <p>就将计就计</p>
+    <p>就将计就计</p>
+    <p>就将计就计</p>
+    <p>就将计就计</p>
+    <p>就将计就计</p>
+    <p>就将计就计</p>
+    <p>就将计就计</p>
+    <p>就将计就计</p>
+    <p>就将计就计</p>
+    <p>就将计就计</p>
+    <p>就将计就计</p>
+    <p>就将计就计</p>
+    <p>就将计就计</p>
+    <p>就将计就计</p>
+    <p>就将计就计</p>
+    <p>就将计就计</p>
+    <p>就将计就计</p>
+    <p>就将计就计</p>
+    <p>就将计就计</p>
+    <p>就将计就计</p>
+    <p>就将计就计</p>
+    <p>就将计就计</p>
+    <p>就将计就计</p>
+    <p>就将计就计</p>
+    <p>就将计就计</p>
+</div>
+<script src="js/mui.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+mui.init();
+function showMask() {
+	var mask = mui.createMask(function () {
+		mui.toast('关闭了mask')
+	})
+	mask.show();
+}
+mui('.mui-bar-transparent').transparent({
+    top: 0,
+    offset: 450,
+    duration: 160,
+    scrollby: document.querySelector('.mui-scroll-wrapper')
+})
+//var scroll = mui('.mui-scroll-wrapper').scroll();
+//document.querySelector('.mui-scroll-wrapper').addEventListener('scroll',function (e) {
+//　　console.log(scroll.y);
+//})
+</script>
+</body>
+</html>
+

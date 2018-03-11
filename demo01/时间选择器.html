@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>时间选择器</title>
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+<link rel="stylesheet" type="text/css" href="css/mui.css"/>
+<link rel="stylesheet" type="text/css" href="css/mui.picker.min.css"/>
+</head>
+<body>
+<header class="mui-bar mui-bar-nav">
+    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+    <h1 class="mui-title">时间选择器</h1>
+</header>
+<div class="mui-content">
+    <div>
+    	<button id="pickDateBtn" type="button" class="mui-btn mui-btn-blue">选择日期</button>
+    	<p class="pickDate">&nbsp;</p>
+    </div>
+</div>
+<script src="js/mui.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/mui.picker.min.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+mui.init();
+//var dtpicker = new mui.DtPicker({
+//  type: "datetime",//设置日历初始视图模式 
+//  beginDate: new Date(2015, 04, 25),//设置开始日期 
+//  endDate: new Date(2016, 04, 25),//设置结束日期 
+//  labels: ['Year', 'Mon', 'Day', 'Hour', 'min'],//设置默认标签区域提示语 
+//  customData: { 
+//      h: [
+//          { value: 'AM', text: 'AM' },
+//          { value: 'PM', text: 'PM' }
+//      ] 
+//  }//时间/日期别名 
+//}) 
+//dtpicker.show(function(e) {
+//  console.log(e);
+//})
+document.getElementById("pickDateBtn").addEventListener('tap', function() {
+    var dtpickr = new mui.DtPicker({
+    	type: 'hour',
+    	labels: ['Year2', 'Mon2', 'Day2', 'Hour2', 'min2'],
+    	beginDate: new Date(2015, 01, 01),//设置开始日期 
+    	endDate: new Date(2020, 01, 01),//设置结束日期 
+    	customData: {
+    		h: [
+    			{ value: 'AM', text: '上午' },
+    			{ value: 'PM', text: '下午' }
+    		]
+    	}
+    });
+    dtpickr.show(function(e){
+    	console.log(e);
+    	console.log(e.y.value);
+    });
+//  dtpickr.hide(function(e){
+//  	console.log(e)
+//  })
+});
+</script>
+</body>
+</html>
+

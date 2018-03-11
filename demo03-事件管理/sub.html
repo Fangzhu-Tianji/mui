@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Document</title>
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+<link rel="stylesheet" type="text/css" href="css/mui.css"/>
+</head>
+<body>
+<header class="mui-bar mui-bar-nav">
+    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+    <h1 class="mui-title">子页面</h1>
+</header>
+<div class="mui-content">
+    <p></p>
+    <p></p>
+</div>
+<script src="js/mui.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+mui.init();
+mui.plusReady(function() {
+	window.addEventListener('newid', function(e) {
+		document.querySelectorAll('p')[0].innerHTML = e.detail.id;
+		document.querySelectorAll('p')[1].innerHTML = e.detail.txt;
+	})
+})
+</script>
+</body>
+</html>

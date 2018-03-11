@@ -1,0 +1,11 @@
+{
+	"index.html": {
+		"resources": [
+			"examples/sub.html"
+		],
+		"refer": [
+			"examples/sub.html",
+			"examples/news.html"
+		]
+	}
+}

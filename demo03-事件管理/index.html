@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+<title></title>
+<script src="js/mui.min.js"></script>
+<link href="css/mui.min.css" rel="stylesheet"/>
+</head>
+<body>
+<header class="mui-bar mui-bar-nav">
+    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+    <h1 class="mui-title">事件</h1>
+</header>
+<div class="mui-content">
+    <ul class="mui-table-view">
+        <li class="mui-table-view-cell list" id="list">
+            <a class="mui-navigate-right">
+                Item 1
+            </a>
+        </li>
+        <li class="mui-table-view-cell">
+            <a class="mui-navigate-right">
+                 Item 2
+            </a>
+        </li>
+        <li class="mui-table-view-cell">
+            <a class="mui-navigate-right">
+                 Item 3
+            </a>
+        </li>
+    </ul>
+    <button type="button" class="mui-btn mui-btn-blue on-even">on事件</button>
+    <button type="button" class="mui-btn mui-btn-danger">off事件</button>
+    <button type="button" class="mui-btn mui-btn-blue trigger">触发on事件(trigger)</button>
+    <button type="button" class="mui-btn mui-btn-blue swipeleft">手滑事件(swipeleft)</button><br>
+    <button type="button" class="mui-btn mui-btn-blue fire" id="11" data-txt="新闻">自定义事件(带参进入下一页面)</button>
+</div>
+<script type="text/javascript" charset="utf-8">
+mui.init();
+//addEventListener事件
+mui('.list')[0].addEventListener('tap', function() {
+	mui.toast('tap1');
+})
+document.querySelector('.list').addEventListener('tap', function() {
+	mui.toast('tap2');
+});
+//on事件
+mui('.mui-content').on('tap', '.on-even', function() {
+	mui.toast(this.innerHTML)
+})
+//off事件
+mui('.mui-content').on('tap', '.mui-btn-danger', function() {
+	mui('.mui-content').off('tap', '.on-even');
+	mui.toast('取消绑定')
+})
+//trigger事件
+mui('.mui-content').on('tap', '.trigger', function() {
+	mui.trigger(mui('.on-even')[0], 'tap')
+})
+//手滑事件
+mui('.mui-content').on('swipeleft', '.swipeleft', function() {
+	mui.toast('左滑动')
+})
+//自定义事件
+mui.plusReady(function() {
+	var detailPage = mui.preload({
+		url: 'sub.html',
+		id: 'sub.html'
+	})
+	mui('.mui-content').on('tap', '.fire', function() {
+		var id = this.getAttribute('id');
+		var txt = this.getAttribute('data-txt');
+//		mui.toast(id);
+//		mui.toast(txt);
+		mui.fire(detailPage, 'newid', {
+			id: id,
+			txt: txt
+		});
+		mui.openWindow({
+			id: 'sub.html'
+		})
+	})
+})
+</script>
+</body>
+</html>

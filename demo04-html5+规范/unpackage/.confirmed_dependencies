@@ -1,0 +1,10 @@
+{
+	"index.html": {
+		"refer": [
+			"拨打电话等.html",
+			"tel.html",
+			"Internet.html",
+			"event.html"
+		]
+	}
+}

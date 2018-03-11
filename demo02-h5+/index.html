@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+<title></title>
+<script src="js/mui.min.js"></script>
+<link href="css/mui.min.css" rel="stylesheet"/>
+</head>
+<body>
+<header class="mui-bar mui-bar-nav">
+    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+    <h1 class="mui-title">标题</h1>
+</header>
+<div class="mui-content">
+    <button type="button" class="mui-btn mui-btn-blue" onclick="openWindow()">打开新窗口</button>
+</div>
+<script type="text/javascript" charset="utf-8">
+mui.init({
+	subpages: [{
+		url: 'examples/sub.html',
+		id: 'examples/sub.html',
+		styles: {
+			top: '70px'
+		}
+	}],
+	preloadPages: [{
+		url: 'examples/news.html',
+		id: 'examples/news.html'
+	}]
+});
+mui.plusReady(function(){
+	mui.toast('当前地址：'+ plus.webview.currentWebview().getURL())
+})
+function openWindow() {
+	mui.openWindow({
+		url: 'examples/news.html',
+		id: 'examples/news.html',
+		extras: {
+			name: 'jok',
+			age: 18
+		}
+	})
+}
+</script>
+</body>
+</html>

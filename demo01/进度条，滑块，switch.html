@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>进度条</title>
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+<link rel="stylesheet" type="text/css" href="css/mui.css"/>
+<style>
+.mui-progressbar {
+	margin: 20px;
+}
+</style>
+</head>
+<body>
+<header class="mui-bar mui-bar-nav">
+    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+    <h1 class="mui-title">进度条</h1>
+</header>
+<div class="mui-content">
+<!--<div class="mui-progressbar mui-progressbar-infinite">
+	<span></span>
+</div>-->
+<div class="mui-progressbar" id="demo1">
+	<span></span>
+</div>
+<button type="button" class="mui-btn mui-btn-blue" onclick="hidePro()">关闭进度条</button>
+<ul class="mui-table-view">
+    <li class="mui-table-view-cell">
+        Item 1
+        <div class="mui-switch mui-switch-mini mui-active mui-switch-blue" id="mySwitch">
+		  <div class="mui-switch-handle"></div>
+		</div>
+    </li>
+    <li class="mui-table-view-cell">
+        <a class="mui-navigate-right">
+             Item 2
+        </a>
+    </li>
+    <li class="mui-table-view-cell">
+        <a class="mui-navigate-right">
+             Item 3
+        </a>
+    </li>
+</ul>
+<button type="button" class="mui-btn mui-btn-blue" onclick="getIs()">获取选中状态</button>
+</div>
+<script src="js/mui.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+mui.init();
+mui("#demo1").progressbar({progress:20}).show();
+function hidePro() {
+	mui("#demo1").progressbar().hide();
+}
+function getIs() {
+	var isActive = document.getElementById("mySwitch").classList.contains("mui-active");
+	if(isActive){
+		mui.toast("打开状态");
+	}else{
+		mui.toast("关闭状态");  
+	}
+}
+</script>
+</body>
+</html>

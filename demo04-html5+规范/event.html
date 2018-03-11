@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Document</title>
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+<link rel="stylesheet" type="text/css" href="css/mui.css"/>
+</head>
+<body>
+<header class="mui-bar mui-bar-nav">
+    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+    <h1 class="mui-title">事件</h1>
+</header>
+<div class="mui-content">
+	<button type="button" class="mui-btn-blue">点击事件</button>
+	<button type="button" class="mui-btn-blue">假点击事件</button>
+    <p>hhhhh</p>
+    <p>hhhhh</p>
+    <p>hhhhh</p>
+    <p>hhhhh</p>
+    <p>hhhhh</p>
+    <p>hhhhh</p>
+    <p>hhhhh</p>
+    <p>hhhhh</p>
+    <p>hhhhh</p>
+    <p>hhhhh</p>
+    <p>hhhhh</p>
+    <p>hhhhh</p>
+    <p>hhhhh</p>
+    <p>hhhhh</p>
+    <p>hhhhh</p>
+    <p>hhhhh</p>
+    <p>hhhhh</p>
+    <p>hhhhh</p>
+    <p>hhhhh</p>
+    <p>hhhhh</p>
+    <p>hhhhh</p>
+    <p>hhhhh</p>
+    <p>hhhhh</p>
+    <p>hhhhh</p>
+    <p>hhhhh</p>
+    <p>hhhhh</p>
+    <p>hhhhh</p>
+    <p>hhhhh</p>
+    <p>hhhhh</p>
+    <p>hhhhh</p>
+    <p>hhhhh</p>
+    <p>hhhhh</p>
+    <p>hhhhh</p>
+    <p>hhhhh</p>
+    <p>hhhhh</p>
+</div>
+<script src="js/mui.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+mui.init();
+document.addEventListener('plusready', function() {
+//	mui.alert('ok');
+	document.addEventListener('pause', function() {
+		mui.alert('APP在后台运行')
+	});
+	document.addEventListener('resume', function() {
+		mui.alert('APP在前台运行')
+	});
+	document.addEventListener('plusscrollbottom', function() {
+		mui.alert('滚动到底部了')
+	});
+	document.querySelector('.mui-btn-blue').addEventListener('tap', function() {
+		mui.alert('点击了')
+	})
+})
+</script>
+</body>
+</html>
+
