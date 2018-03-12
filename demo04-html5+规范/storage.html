@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Document</title>
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+<link rel="stylesheet" type="text/css" href="css/mui.css"/>
+</head>
+<body>
+<header class="mui-bar mui-bar-nav">
+    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+    <h1 class="mui-title">storage</h1>
+</header>
+<div class="mui-content">
+<button type="button" class="mui-btn mui-btn-blue set">设置storage</button>
+<button type="button" class="mui-btn mui-btn-blue clear">清除storage</button>
+</div>
+<script src="js/mui.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+mui.init();
+var arr = ['a', 'b', 'c'];
+document.querySelector('.set').addEventListener('tap', function() {
+	plus.storage.setItem('name', 'arr');
+	console.log(plus.storage.getItem('name'));
+	mui.alert(plus.storage.getLength());
+})
+document.querySelector('.clear').addEventListener('tap', function() {
+	plus.storage.clear();
+})
+</script>
+</body>
+</html>

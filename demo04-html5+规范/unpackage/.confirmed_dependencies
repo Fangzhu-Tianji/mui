@@ -4,7 +4,12 @@
 			"拨打电话等.html",
 			"tel.html",
 			"Internet.html",
-			"event.html"
+			"event.html",
+			"storage.html",
+			"nativeUI.html",
+			"io.html",
+			"gallery相册.html",
+			"gallery.html"
 		]
 	}
 }

@@ -29,11 +29,33 @@
                     事件
                 </a>
             </li>
+            <li class="mui-table-view-cell" onclick="openWindow('nativeUI.html')">
+                <a class="mui-navigate-right">
+                    nativeUI
+                </a>
+            </li>
+            <li class="mui-table-view-cell" onclick="openWindow('storage.html')">
+                <a class="mui-navigate-right">
+                    本地存储storage
+                </a>
+            </li>
+            <li class="mui-table-view-cell" onclick="openWindow('io.html')">
+                <a class="mui-navigate-right">
+                    io
+                </a>
+            </li>
+            <li class="mui-table-view-cell" onclick="openWindow('gallery.html')">
+                <a class="mui-navigate-right">
+                    gallery相册
+                </a>
+            </li>
         </ul>
 </div>
 <script type="text/javascript" charset="utf-8">
 //文档见http://www.hcoder.net/tutorials/info_97.html
-mui.init();
+mui.init({
+	statusBarBackground: '#ff4400'
+});
 mui.plusReady(function() {
 	mui.toast(plus.screen.getBrightness());
 	void plus.screen.lockOrientation( "portrait-primary" );

@@ -1,7 +1,7 @@
 {
 	"@platforms": ["android", "iPhone", "iPad"],
-	"id": "H5E17B799",/*应用的标识，创建应用时自动生成，勿手动修改*/
-	"name": "demo04-html5+规范",/*应用名称，程序桌面图标名称*/
+	"id": "H546E689E",/*应用的标识，创建应用时自动生成，勿手动修改*/
+	"name": "demo05-webview",/*应用名称，程序桌面图标名称*/
 	"version": {
 		"name": "1.0.0",/*应用版本名称*/
 		"code": "83"
@@ -131,15 +131,8 @@
 			"index.html": {
 				"resources": [],
 				"refer": [
-					"拨打电话等.html",
-					"tel.html",
-					"Internet.html",
-					"event.html",
-					"storage.html",
-					"nativeUI.html",
-					"io.html",
-					"gallery相册.html",
-					"gallery.html"
+					"new.html",
+					"new1.html"
 				],
 				"priority": 0
 			}

@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Document</title>
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+<link rel="stylesheet" type="text/css" href="css/mui.css"/>
+</head>
+<body>
+<header class="mui-bar mui-bar-nav">
+    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+    <h1 class="mui-title">webview</h1>
+</header>
+<div class="mui-content">
+    <button type="button" class="mui-btn mui-btn-blue" onclick="openNew()">打开新窗口</button>
+</div>
+<script src="js/mui.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+mui.init();
+mui.plusReady(function() {
+	var wvs = plus.webview.all();
+	console.log(JSON.stringify(wvs));
+	plus.webview.create(
+		'new1.html',
+		'new1.html'
+	)
+})
+function openNew() {
+	plus.webview.open(
+		'new.html',
+		'new.html',
+		{},
+		'slide-in-right'
+	)
+}
+</script>
+</body>
+</html>
