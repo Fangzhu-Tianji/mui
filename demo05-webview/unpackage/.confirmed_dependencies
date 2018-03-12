@@ -4,5 +4,10 @@
 			"new.html",
 			"new1.html"
 		]
+	},
+	"new1.html": {
+		"refer": [
+			"index.html"
+		]
 	}
 }

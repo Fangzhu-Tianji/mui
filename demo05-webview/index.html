@@ -13,22 +13,42 @@
 </header>
 <div class="mui-content">
     <button type="button" class="mui-btn mui-btn-blue" onclick="openNew()">打开新窗口</button>
+    <button type="button" class="mui-btn mui-btn-blue" onclick="openOut()">打开外面窗口</button>
+    <a href="new1.html" class="mui-btn mui-btn-blue">new1</a>
 </div>
 <script src="js/mui.js" type="text/javascript" charset="utf-8"></script>
 <script type="text/javascript">
 mui.init();
+var backNum = 0;
 mui.plusReady(function() {
 	var wvs = plus.webview.all();
 	console.log(JSON.stringify(wvs));
 	plus.webview.create(
 		'new1.html',
 		'new1.html'
-	)
+	);
+	plus.key.addEventListener('backbutton', function() {
+//		if(backNum < 1) {
+//			mui.toast('再按一次返回退出程序');
+//			backNum++;
+//			return;
+//		}
+//		plus.webview.currentWebview().close()
+mui.toast(88888)
+	})
 })
 function openNew() {
 	plus.webview.open(
 		'new.html',
 		'new.html',
+		{},
+		'slide-in-right'
+	)
+}
+function openOut() {
+	plus.webview.open(
+		'new1.html',
+		'new1.html',
 		{},
 		'slide-in-right'
 	)

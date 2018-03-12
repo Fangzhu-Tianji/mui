@@ -135,6 +135,13 @@
 					"new1.html"
 				],
 				"priority": 0
+			},
+			"new1.html": {
+				"resources": [],
+				"refer": [
+					"index.html"
+				],
+				"priority": 0
 			}
 		},
 		"idle": {
