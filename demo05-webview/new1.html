@@ -12,11 +12,17 @@
     <h1 class="mui-title">new1</h1>
 </header>
 <div class="mui-content">
-    
+    <button type="button" class="mui-btn mui-btn-blue" onclick="hidePage()">关闭页面</button>
 </div>
 <script src="js/mui.js" type="text/javascript" charset="utf-8"></script>
 <script type="text/javascript">
 mui.init();
+function hidePage() {
+	var w = plus.webview.currentWebview()
+	console.log(JSON.stringify(w))
+//	w.hide()
+	w.close()
+}
 </script>
 </body>
 </html>
