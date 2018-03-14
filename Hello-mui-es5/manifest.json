@@ -155,7 +155,10 @@
 					"list.html"
 				],
 				"refer": [
-					"index-menu.html"
+					"index-menu.html",
+					"examples/best-practices/list-to-detail/listview.html",
+					"examples/guide.html",
+					"examples/pullrefresh.html"
 				],
 				"priority": 0
 			},
@@ -998,6 +1001,13 @@
 					"js/mui.js"
 				],
 				"refer": [],
+				"priority": 0
+			},
+			"examples/best-practices/list-to-detail/listview.html": {
+				"resources": [],
+				"refer": [
+					"examples/best-practices/list-to-detail/detail.html"
+				],
 				"priority": 0
 			}
 		},

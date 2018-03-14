@@ -2,7 +2,8 @@
 	"index.html": {
 		"refer": [
 			"new.html",
-			"new1.html"
+			"new1.html",
+			"pullRefresh.html"
 		]
 	},
 	"new1.html": {

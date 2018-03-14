@@ -1,8 +1,8 @@
 var util = {
 	options: {
 		ACTIVE_COLOR: "#007aff",
-		NORMAL_COLOR: "#000",
-		subpages: ["html/tab-webview-subpage-chat.html", "html/tab-webview-subpage-contact.html"]
+		NORMAL_COLOR: "#000000",
+		subpages: ["html/main-billboard.html", "html/main-setting.html"]
 	},
 	/**
 	 *  简单封装了绘制原生view控件的方法
@@ -80,7 +80,8 @@ var util = {
 		util.updateSubNView(currIndex, util.options.ACTIVE_COLOR);
 		util.updateSubNView(currIndex + 1, util.options.ACTIVE_COLOR);
 		// 重绘兄弟tag 反之排除当前点击的icon和text
-		for(var i = 0; i < 8; i++) {
+		// --修改了i<6 ==>之前是i<8
+		for(var i = 0; i < 6; i++) {
 			if(i !== currIndex && i !== currIndex + 1) {
 				util.updateSubNView(i, util.options.NORMAL_COLOR);
 			}

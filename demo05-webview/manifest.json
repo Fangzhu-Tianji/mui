@@ -132,7 +132,8 @@
 				"resources": [],
 				"refer": [
 					"new.html",
-					"new1.html"
+					"new1.html",
+					"pullRefresh.html"
 				],
 				"priority": 0
 			},

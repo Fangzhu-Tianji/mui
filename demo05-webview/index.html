@@ -14,6 +14,7 @@
 <div class="mui-content">
     <button type="button" class="mui-btn mui-btn-blue" onclick="openNew()">打开新窗口</button>
     <button type="button" class="mui-btn mui-btn-blue" onclick="openOut()">打开外面窗口</button>
+    <button type="button" class="mui-btn mui-btn-blue" onclick="pullRefresh()">上拉刷新，下拉加载</button>
     <a href="new1.html" class="mui-btn mui-btn-blue">new1</a>
 </div>
 <script src="js/mui.js" type="text/javascript" charset="utf-8"></script>
@@ -49,6 +50,14 @@ function openOut() {
 	plus.webview.open(
 		'new1.html',
 		'new1.html',
+		{},
+		'slide-in-right'
+	)
+}
+function pullRefresh() {
+	plus.webview.open(
+		'pullRefresh.html',
+		'pullRefresh.html',
 		{},
 		'slide-in-right'
 	)
