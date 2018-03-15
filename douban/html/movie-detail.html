@@ -61,7 +61,7 @@
     <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
     <h1 class="mui-title">演员</h1>
 </header>
-<div class="mui-content" style="background: white;" >
+<div class="mui-content" id="content" style="background: white;" >
 	<div class="top-image-block">
 		<img :src="cover" style="width: 160px;height: 240px;vertical-align: top;" />
 	</div>
@@ -123,14 +123,73 @@
 	</ul>
     
 </div>
-<script src="../js/mui.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/vue.min.js" type="text/javascript" charset="utf-8"></script>
 <script type="text/javascript">
 mui.init();
+//默认数据
+function getDefaultData(){
+	return{
+		title:'',
+		cover:'',
+		score:'',
+		ratingCount:'',
+		summary:'',
+		countries:'',
+		year:'',
+		genres:'',
+		casts:[],
+		directors:[]
+	}
+}
+//vue对象
+var data_detail = new Vue({
+	el:'#content',
+	data:getDefaultData(),
+	methods:{
+		resetData:function(){//重置数据
+			Object.assign(this.$data,getDefaultData());
+		},
+		open_detail:function(item){
+			//打开演员详情页面
+			mui.openWindow({
+				id:'cast-detail',
+				url:'./cast-detail.html',
+				extras:{
+					castId:item.id
+				}
+			});
+		}
+	}
+});
 window.addEventListener('movieId', function(e) {
-	console.log(e.detail.id)
+	var id = e.detail.id;
+	console.log(id);
+	plus.nativeUI.showWaiting('加载中', {
+		width: '100px',
+		height: '100px'
+	})
+	//根据id请求电影详情数据
+	mui.getJSON('http://api.douban.com/v2/movie/subject/'+id,function(res){
+		data_detail.title = res.title;
+		data_detail.cover = res.images.large;
+		data_detail.score = res.rating.average;
+		data_detail.ratingCount = res.ratings_count;
+		data_detail.summary = res.summary;
+		data_detail.countries = res.countries.toString('/,/g',' / ');
+		data_detail.year = res.year;
+		data_detail.genres = res.genres.toString('/,/g',' / ');
+		data_detail.casts = res.casts;
+		data_detail.directors = res.directors;
+		plus.nativeUI.closeWaiting();
+	})
 })
 mui.plusReady(function() {
-	console.log(JSON.stringify(plus.webview.all()));
+	var self = plus.webview.currentWebview();
+	self.addEventListener('hide', function() {
+		window.scrollTo(0,0);
+		data_detail.resetData();
+	}, false)
 })
 </script>
 </body>

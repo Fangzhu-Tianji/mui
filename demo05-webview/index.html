@@ -39,12 +39,16 @@ mui.toast(88888)
 	})
 })
 function openNew() {
-	plus.webview.open(
-		'new.html',
-		'new.html',
-		{},
-		'slide-in-right'
-	)
+//	plus.webview.open(
+//		'new.html',
+//		'new.html',
+//		{},
+//		'slide-in-right'
+//	)
+	mui.openWindow({
+		id:'new.html',
+		url:'new.html',
+	});
 }
 function openOut() {
 	plus.webview.open(
