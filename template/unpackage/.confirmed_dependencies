@@ -1,0 +1,13 @@
+{
+	"index.html": {
+		"resources": [
+			"tabBar/home.html"
+		],
+		"refer": [
+			"tabBar/setting.html",
+			"tabBar/home.html",
+			"tabBar/my.html",
+			"tabBar/info.html"
+		]
+	}
+}

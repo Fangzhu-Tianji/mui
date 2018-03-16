@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Document</title>
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+<link rel="stylesheet" type="text/css" href="css/mui.css"/>
+</head>
+<body>
+<header class="mui-bar mui-bar-nav">
+    <h1 class="mui-title">首页</h1>
+</header>
+<nav class="mui-bar mui-bar-tab">
+    <a class="mui-tab-item mui-active" href="tabBar/home.html">
+        <span class="mui-icon mui-icon-home"></span>
+        <span class="mui-tab-label">首页</span>
+    </a>
+    <a class="mui-tab-item" href="tabBar/info.html">
+        <span class="mui-icon mui-icon-phone"></span>
+        <span class="mui-tab-label">信息</span>
+    </a>
+    <a class="mui-tab-item" href="tabBar/setting.html">
+        <span class="mui-icon mui-icon-email"></span>
+        <span class="mui-tab-label">设置</span>
+    </a>
+    <a class="mui-tab-item" href="tabBar/my.html">
+        <span class="mui-icon mui-icon-gear"></span>
+        <span class="mui-tab-label">我的</span>
+    </a>
+</nav>
+<script src="js/mui.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+mui.init();
+var mainWebView; //当前主webview
+var curTabItem; //当前被选中tabitem
+var barItemUrl = ['tabBar/home.html','tabBar/info.html','tabBar/setting.html','tabBar/my.html'];
+var barItemWebView = {}; //每个tabitem所对应显示的页面对象
+mui.plusReady(function() {
+	plus.navigator.setStatusBarBackground('black');
+	mainWebView = plus.webview.currentWebview();
+	//初始化页面
+	inittabitemWebviews();
+	//为每个bar－item添加点击事件
+	addEventForTabitem();
+	console.log(JSON.stringify(plus.webview.all()))
+	console.log(plus.webview.all().length)
+});
+//初始化每个tabitem所对应的页面
+function inittabitemWebviews() {
+	for (var i = 0; i < barItemUrl.length; i++) {
+//		if (plus.webview.getWebviewById(barItemUrl[i])) {
+//			return;
+//		}
+		barItemWebView[i] = mui.preload({
+			url: barItemUrl[i],
+			id: barItemUrl[i],
+			styles: {
+				top: '44px',
+				bottom: '51px',
+				left: '0px',
+				bounceBackground: '#FF4400'
+			},
+			waiting: {
+				autoShow: false
+			}
+		});
+		barItemWebView[i].hide();
+		mainWebView.append(barItemWebView[i]);
+	}
+	barItemWebView[0].show();
+}
+//为每个tabitem添加监听
+function addEventForTabitem() {
+	mui('.mui-bar-tab').on('tap', '.mui-tab-item', function() {
+		var tabitem = this;console.log(tabitem);console.log(curTabItem);
+		if (tabitem == curTabItem) {
+			return;
+		}
+		curTabItem = tabitem;
+		//设置将显示当前webview
+		showCurWebView(tabitem.getAttribute('href'));
+	}, false);
+}
+//设置webview的切换显示的函数
+function showCurWebView(href) {
+	var index = 0;
+	for (let i = 0; i < barItemUrl.length; i++) {
+		if (href == barItemUrl[i]) {
+			index = i;
+		} else {
+			barItemWebView[i].hide();
+		}
+	}
+	barItemWebView[index].show();
+}
+</script>
+</body>
+</html>
