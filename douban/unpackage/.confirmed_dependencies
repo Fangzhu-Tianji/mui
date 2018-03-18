@@ -79,5 +79,10 @@
 		"refer": [
 			"html/cast-detail.html"
 		]
+	},
+	"html/main-billboard.html": {
+		"refer": [
+			"html/billboard-top.html"
+		]
 	}
 }
