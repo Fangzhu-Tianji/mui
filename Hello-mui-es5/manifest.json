@@ -158,7 +158,8 @@
 					"index-menu.html",
 					"examples/best-practices/list-to-detail/listview.html",
 					"examples/guide.html",
-					"examples/pullrefresh.html"
+					"examples/pullrefresh.html",
+					"examples/pullrefresh_main.html"
 				],
 				"priority": 0
 			},

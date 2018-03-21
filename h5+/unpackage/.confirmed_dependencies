@@ -1,0 +1,77 @@
+{
+	"index.html": {
+		"refer": [
+			"plus/storage.html",
+			"plus/share.html",
+			"plus/uploader.html",
+			"plus/file.html",
+			"plus/events.html",
+			"plus/gallery.html",
+			"plus/nativeobj.html",
+			"plus/nativeui.html",
+			"plus/navigator.html",
+			"plus/push.html",
+			"plus/proximity.html",
+			"plus/runtime.html",
+			"plus/statistic.html",
+			"plus/speech.html",
+			"plus/webview.html",
+			"plus/zip.html",
+			"plus/xhr.html",
+			"plus/njs.html"
+		]
+	},
+	"plus/uploader.html": {
+		"refer": [
+			"plus/doc.html"
+		]
+	},
+	"plus/doc.html": {
+		"refer": [
+			"doc/uploader.html"
+		]
+	},
+	"plus/nativeobj.html": {
+		"refer": [
+			"plus/nativeobj_animation.html"
+		]
+	},
+	"plus/nativeui.html": {
+		"refer": [
+			"plus/nativeui_waiting.html"
+		]
+	},
+	"plus/navigator.html": {
+		"refer": [
+			"plus/navigator_status.html"
+		]
+	},
+	"plus/webview_animation.html": {
+		"refer": [
+			"plus/webview_new.html"
+		]
+	},
+	"plus/webview.html": {
+		"refer": [
+			"plus/webview_animation.html",
+			"plus/webview_embed.html",
+			"plus/webview_pulltorefresh.html",
+			"plus/webview_float.html",
+			"plus/webview_pullhead_custom.html",
+			"plus/webview_mask.html"
+		]
+	},
+	"plus/webview_pullhead_custom.html": {
+		"resources": [
+			"plus/webview_pullrefresh_custom.html"
+		],
+		"refer": [
+			"plus/webview_pullrefresh_custom.html"
+		]
+	},
+	"plus/webview_mask.html": {
+		"refer": [
+			"plus/webview_mask_side.html"
+		]
+	}
+}

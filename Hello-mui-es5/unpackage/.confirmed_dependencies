@@ -4,12 +4,21 @@
 			"index-menu.html",
 			"examples/best-practices/list-to-detail/listview.html",
 			"examples/guide.html",
-			"examples/pullrefresh.html"
+			"examples/pullrefresh.html",
+			"examples/pullrefresh_main.html"
 		]
 	},
 	"examples/best-practices/list-to-detail/listview.html": {
 		"refer": [
 			"examples/best-practices/list-to-detail/detail.html"
+		]
+	},
+	"examples/pullrefresh_main.html": {
+		"resources": [
+			"examples/pullrefresh_sub.html"
+		],
+		"refer": [
+			"examples/pullrefresh_sub.html"
 		]
 	}
 }
