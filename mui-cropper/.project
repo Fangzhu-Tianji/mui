@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>demo01</name>
+	<name>cropper-demo</name>
 	<comment>Create By HBuilder</comment>
 	<projects>
 	</projects>
@@ -22,7 +22,7 @@
 	</natures>
 	<filteredResources>
 		<filter>
-			<id>1520496361515</id>
+			<id>1441781147334</id>
 			<name></name>
 			<type>10</type>
 			<matcher>
@@ -40,7 +40,7 @@
 			</matcher>
 		</filter>
 		<filter>
-			<id>1520521713730</id>
+			<id>1522138342494</id>
 			<name></name>
 			<type>26</type>
 			<matcher>
@@ -49,7 +49,7 @@
 			</matcher>
 		</filter>
 		<filter>
-			<id>1520521713730</id>
+			<id>1522138342504</id>
 			<name></name>
 			<type>26</type>
 			<matcher>
@@ -58,7 +58,7 @@
 			</matcher>
 		</filter>
 		<filter>
-			<id>1522130356116</id>
+			<id>1522141132058</id>
 			<name></name>
 			<type>26</type>
 			<matcher>

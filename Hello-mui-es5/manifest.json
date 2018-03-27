@@ -159,7 +159,31 @@
 					"examples/best-practices/list-to-detail/listview.html",
 					"examples/guide.html",
 					"examples/pullrefresh.html",
-					"examples/pullrefresh_main.html"
+					"examples/pullrefresh_main.html",
+					"examples/tab-top-webview-main.html",
+					"examples/tab-with-viewpagerindicator.html",
+					"examples/tab-with-segmented-control-vertical.html",
+					"examples/tab-with-segmented-control.html",
+					"examples/media-list.html",
+					"examples/range.html",
+					"examples/radio.html",
+					"examples/switches.html",
+					"examples/typography.html",
+					"examples/accordion.html",
+					"examples/badges.html",
+					"examples/ajax.html",
+					"examples/actionsheet.html",
+					"examples/buttons-with-icons.html",
+					"examples/checkbox.html",
+					"examples/card.html",
+					"examples/slider-native.html",
+					"examples/dialog.html",
+					"examples/grid-pagination.html",
+					"examples/slider-table-default.html",
+					"examples/input.html",
+					"examples/grid-default.html",
+					"examples/icons-extra.html",
+					"examples/icons.html"
 				],
 				"priority": 0
 			},
@@ -1008,6 +1032,20 @@
 				"resources": [],
 				"refer": [
 					"examples/best-practices/list-to-detail/detail.html"
+				],
+				"priority": 0
+			},
+			"examples/tab-top-webview-main.html": {
+				"resources": [
+					"examples/tab-top-subpage-1.html"
+				],
+				"refer": [
+					"examples/tab-top-subpage-5.html",
+					"examples/tab-top-subpage-3.html",
+					"examples/tab-top-subpage-2.html",
+					"examples/tab-top-subpage-4.html",
+					"examples/tab-top-subpage-6.html",
+					"examples/tab-top-subpage-7.html"
 				],
 				"priority": 0
 			}
